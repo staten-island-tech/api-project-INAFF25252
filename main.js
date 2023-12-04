@@ -1,4 +1,4 @@
-const URL = `https://sv443.net/jokeapi/v2/response`;
+const URL = `https://sv443.net/jokeapi/v2`;
 
 async function getData(URL){
     try{
