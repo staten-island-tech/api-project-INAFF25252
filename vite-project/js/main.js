@@ -26,8 +26,10 @@ const DOMSelectors = {
   pointTwo:document.getElementById("pointTwo"), */
 };
 console.log(DOMSelectors)
-const URL = `https://sv443.net/jokeapi/v2`;
-
+const URL = ``
+// const URL = `https://sv443.net/jokeapi/v2`;
+//X-APIKEY
+//https://docs.holodex.net/
 async function getData(URL){
     try{
       const response = await fetch(URL);
