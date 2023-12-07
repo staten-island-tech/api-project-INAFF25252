@@ -26,7 +26,8 @@ const DOMSelectors = {
   pointTwo:document.getElementById("pointTwo"), */
 };
 console.log(DOMSelectors)
-const URL = ``
+const URL = 'https://holodex.net/random'
+const APIKEY = `df7c4485-0a70-4cc1-9e2e-519a4f6b08b9`
 // const URL = `https://sv443.net/jokeapi/v2`;
 //X-APIKEY
 //https://docs.holodex.net/
