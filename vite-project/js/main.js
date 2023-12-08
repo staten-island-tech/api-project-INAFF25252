@@ -26,15 +26,18 @@ const DOMSelectors = {
   pointTwo:document.getElementById("pointTwo"), */
 };
 console.log(DOMSelectors)
-const URL = 'https://holodex.net/random'
-const APIKEY = `df7c4485-0a70-4cc1-9e2e-519a4f6b08b9`
+const URL = "https://holodex.net/api/v2"
+//const APIKEY = `df7c4485-0a70-4cc1-9e2e-519a4f6b08b9`
 // const URL = `https://sv443.net/jokeapi/v2`;
 //X-APIKEY
-//https://docs.holodex.net/
 async function getData(URL){
     try{
-      const response = await fetch(URL);
-      const data = await response.json();
+      const response = await fetch(URL,
+        {headers: {
+          "X-APIKEY": "df7c4485-0a70-4cc1-9e2e-519a4f6b08b9",
+         }
+        });
+      const data = await response.json(response.type);
       console.log(data);
     } catch(error){
       document.querySelector("h1").textContent = `Sorry I cannot find ${response}`
