@@ -23,5 +23,6 @@ const DOMSelectors = {
     /* point:document.querySelectorAll(".point"), //gets all instances of this
     pointTwo:document.getElementById("pointTwo"), */
   };
+  
 
   export{DOMSelectors};
