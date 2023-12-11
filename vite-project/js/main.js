@@ -2,7 +2,7 @@ import '/style.css'
 import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
-/* function theme(){
+/* function region(){
   DOMSelectors.theme.addEventListener("click", function(event){
   event.preventDefault
   if (document.body.classList.contains("cool")) {
@@ -22,7 +22,7 @@ console.log(DOMSelectors);
 
 }
 
-theme();
+region();
    */
 const URL = "https://pokeapi.co/api/v2/pokemon/"
 //const URL = "https://pokeapi.co/api/v2/{endpoint}/"
@@ -35,36 +35,29 @@ async function getData(URL){
     }
     const data = await response.json();
     console.log(data);
-    data.results.forEach((pokemon)=> console.log(pokemon))
+
+    function all(btn,filter){
+      btn.addEventListener("click", function(event){
+        event.preventDefault();
+      
+        function main(){
+          filter.results.forEach((item)=>  {
+          DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
+           <div class="card">
+           <div class="name">${item.name}<div>
+           </div>`)})
+          }
+        main();
+      })
+      } 
+      all(DOMSelectors.form1,data);
 
   } catch(error){
     console.log("nope")    }
 }
 getData(URL);  
-/* 
-const filter = { 
-}
 
-function all(btn,filter){
-btn.addEventListener("click", function(event){
-  event.preventDefault();
-  clear()
 
-  function main(){
-    filter.forEach((item)=>  {
-    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
-     <div class="card">
-     <img src = "${item.img}" alt="" class="card-img"><img>
-     <div class = "name"> ${item.name} </div>
-     <div class = "veganornot">${string}</div>
-     <div class="type">${item.meal}</div>
-     <div class="price">${item.price}</div>
-     </div>`)})
-    }
-  main();
-})
-} */
 
 //Pokemon name, suggest what they meant if spelled wrong for error
 //Different regional forms, "change theme"
-
