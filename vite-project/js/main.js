@@ -24,15 +24,12 @@ console.log(DOMSelectors);
 
 region();
    */
-const URL = "https://pokeapi.co/api/v2/pokemon/"
+const URL = "https://pokeapi.co/api/v2/pokemon"
 //const URL = "https://pokeapi.co/api/v2/{endpoint}/"
 //use ? for querue parameters, & is adding additional auerues.
 async function getData(URL){
   try{
     const response = await fetch(URL)
-    if(!response.ok){
-      throw new Error(response);
-    }
     const data = await response.json();
     console.log(data);
 
@@ -53,9 +50,37 @@ async function getData(URL){
       all(DOMSelectors.form1,data);
 
   } catch(error){
-    console.log("nope")    }
+    console.log(error)    
+  }
 }
 getData(URL);  
+
+/* const URL = "https://pokeapi.co/api/v2/"
+console.log(fetch(URL));
+//const URL = "https://pokeapi.co/api/v2/{endpoint}/"
+//use ? for querue parameters, & is adding additional auerues.
+async function getData(URL){
+  try{
+    const response = await fetch(URL)
+    const data = await response.json();
+    console.log(data);
+    return data
+
+  } catch(error){
+    console.log(error)    
+  }
+}
+getData(URL);  
+
+
+const apiResponseDOM = document.getElementById("api-response");
+const putQuoteInHTML = async () => {
+    // defining an async arrow function
+    const quote = await fetchData(URL);
+    apiResponseDOM.innerHTML = `Quote: ${quote.content}`;
+};
+putQuoteInHTML(); */
+//Pokemon name, suggest what they me
 
 
 
