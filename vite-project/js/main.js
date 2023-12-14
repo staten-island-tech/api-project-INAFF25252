@@ -27,12 +27,13 @@ const putQuoteInHTML = async () => {
     apiResponseDOM.innerHTML = `Quote: ${quote.content}`;
 };
 putQuoteInHTML(); 
-
+ 
 async function pokemon(){
   try{
     const get = await fetch("https://pokeapi.co/api/v2/pokemon");
-
-
+    const poke = await get.json();
+    console.log(poke);
+    return poke
 
   } catch(error)
   {console.error(error);
