@@ -1,6 +1,6 @@
 const DOMSelectors = {
     card: document.querySelector(".card"),
-    form1: document.querySelector(".Main"),
+    form1: document.querySelector(".Types"),
     form2: document.querySelector(".Types"),
     form3: document.querySelector(".Vegan"),
     form4: document.querySelector(".Entree"),

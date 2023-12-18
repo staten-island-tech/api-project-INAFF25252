@@ -27,21 +27,37 @@ const putQuoteInHTML = async () => {
     apiResponseDOM.innerHTML = `Quote: ${quote.content}`;
 };
 putQuoteInHTML(); 
+
+function all(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
  
 async function pokemon(){
   try{
-    const get = await fetch("https://pokeapi.co/api/v2/pokemon");
+    const get = await fetch(`${URL}${endpoint}`);
     const poke = await get.json();
     console.log(poke);
-    return poke
 
-  } catch(error)
-  {console.error(error);
+    function main(){
+      poke.forEach((item)=>  {
+      DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
+       <div class="card">
+       <img src = "${item}" 
+       </div>`)})
+      }
+    main();
+  
+
+  }catch(error)
+  {console.error(error);}
 
 }
-}
- pokemon();
-//Pokemon name, suggest what they me
+pokemon();
+})}
+
+all(DOMSelectors.form, "pokemon")
+all(DOMSelectors.form1, "move")
+all(DOMSelectors.form, "pokemon")
 
 
 
