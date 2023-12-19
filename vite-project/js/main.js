@@ -39,7 +39,7 @@ async function pokemon(){
     console.log(poke);
 
     function main(){
-      poke.forEach((item)=>  {
+      poke.results.forEach((item)=>  {
       DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
        <div class="card">
        <img src = "${item}" 
@@ -55,10 +55,15 @@ async function pokemon(){
 pokemon();
 })}
 
-all(DOMSelectors.form, "pokemon")
-all(DOMSelectors.form1, "move")
-all(DOMSelectors.form, "pokemon")
 
+/* for(i=1; i<905; i++){
+id = i
+console.log(`"${id}"`)
+} */
+all(DOMSelectors.form, "pokemon",)
+all(DOMSelectors.form1, "type")
+all(DOMSelectors.form2, "berry")
+all(DOMSelectors.form3, "pokemon-species")
 
 
 //Pokemon name, suggest what they meant if spelled wrong for error
