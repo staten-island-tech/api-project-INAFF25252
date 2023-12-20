@@ -20,29 +20,22 @@ async function getData(URL){
 getData(URL);  
 
 
-const apiResponseDOM = document.getElementById("api-response");
-const putQuoteInHTML = async () => {
-    // defining an async arrow function
-    const quote = await getData(URL);
-    apiResponseDOM.innerHTML = `Quote: ${quote.content}`;
-};
-putQuoteInHTML(); 
-
 function all(btn, endpoint){
   btn.addEventListener("click", function(event){
     event.preventDefault();
  
 async function pokemon(){
+  for(let i=1; i<=20; i++){
   try{
-    const get = await fetch(`${URL}${endpoint}`);
+    const get = await fetch(`${URL}${endpoint}${i}`);
     const poke = await get.json();
     console.log(poke);
 
     function main(){
-      poke.results.forEach((item)=>  {
+      poke.forEach((item)=>  {
       DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
        <div class="card">
-       <img src = "${item}" 
+       <img src = "${item.name}" 
        </div>`)})
       }
     main();
@@ -52,15 +45,12 @@ async function pokemon(){
   {console.error(error);}
 
 }
+}
 pokemon();
 })}
 
 
-/* for(i=1; i<905; i++){
-id = i
-console.log(`"${id}"`)
-} */
-all(DOMSelectors.form, "pokemon",)
+all(DOMSelectors.form, "pokemon/",)
 all(DOMSelectors.form1, "type")
 all(DOMSelectors.form2, "berry")
 all(DOMSelectors.form3, "pokemon-species")
