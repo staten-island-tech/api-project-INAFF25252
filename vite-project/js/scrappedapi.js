@@ -1,62 +1,78 @@
-//"X-Api-Key": "ee5186e1-43e4-4517-9356-5b6d610df291",
-//const APIKEY = `df7c4485-0a70-4cc1-9e2e-519a4f6b08b9`
-/*const URL = "https://holodex.net/api/v2"
-// const URL = `https://sv443.net/jokeapi/v2`;
-//X-APIKEY
-async function getData(URL){
-    try{
-      const response = await fetch(URL,
-        {headers: {
-          "X-APIKEY": "df7c4485-0a70-4cc1-9e2e-519a4f6b08b9",
-         }
-        })
-         if(response.status != 200){
-            throw new Error(response);
-          }
-          console.log(response);
-          const data = await response.json();
-          console.log(data);
-          document.querySelector("h1").textContent = {headers: {"X-APIKEY": "df7c4485-0a70-4cc1-9e2e-519a4f6b08b9"}}
-          document.querySelector("h2").textContent = data.type;
-        
-    } catch(error){
-      document.querySelector("h1").textContent = `Sorry I cannot find ${response}`
+/* 
+function clear() {  
+  DOMSelectors.gallery.innerHTML=''
+}
+
+function all(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear();
+    async function pokemon(){
+      for(let i=1; i<=20; i++){
+        try{
+        const get = await fetch(`${URL}${endpoint}${i}`);
+        const poke = await get.json();
+        console.log(poke);
+        function main(){
+          
+        poke.forEach((item)=>  {
+          DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
+          <div class="card">
+          <h2>${item.name}</h2>
+          <img src="${item.sprites.front_default}">
+
+          </div>`)})
+        }
+        main();
+  
+
+        }catch(error){
+          console.error(error);}
+
+      }
     }
+  pokemon();
+})}
+
+
+all(DOMSelectors.form, "pokemon/",)
+all(DOMSelectors.form1, "type/")
+all(DOMSelectors.form2, "berry/")
+all(DOMSelectors.form3, "pokemon-species/") */
+
+/* function id(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+ 
+async function pokemon(){
+  for(let i=1; i<=20; i++){
+  try{
+    const get = await fetch(`${URL}${endpoint}${i}`);
+    const poke = await get.json();
+    console.log(poke);
+
+    function main(){
+      poke.forEach((item)=>  {
+      DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
+       <div class="card">
+       <img src = "${item.name}" 
+       </div>`)})
+      }
+    main();
+  
+
+  }catch(error)
+  {console.error(error);}
+
 }
-getData(URL);
- */
-
-/* function greet(name){
-  const greetPromise = new Promise(function(resolve,reject){
-  resolve(`Hello ${name}`);
-  });
-  return greetPromise;
 }
-const Aaron= greet("Aaron");
-console.log(Aaron);
-Aaron.then((result)=>{
-  console.log(result)
-}) */
+pokemon();
+})}
 
-/*const URL = "https://holodex.net/api/v2/"
-//const APIKEY = `df7c4485-0a70-4cc1-9e2e-519a4f6b08b9`
-// const URL = `https://sv443.net/jokeapi/v2`;
-//X-APIKEY
-async function getData(URL){
-    try{
-      const response = await fetch(URL,
-        {headers: {
-          "X-APIKEY": "df7c4485-0a70-4cc1-9e2e-519a4f6b08b9",
-         }
-        });
+id(DOMSelectors.form, "pokemon/",)
+id(DOMSelectors.form1, "type")
+id(DOMSelectors.form2, "berry")
+id(DOMSelectors.form3, "pokemon-species") */
+//Pokemon name, suggest what they meant if spelled wrong for error
+//Different regional forms, "change theme"
 
-    if(!response.ok){
-      throw new Error(response);
-    }
-    const data = await response.json();
-    console.log(data);
-
-  } catch(error){
-    console.log("nope")    }
-}
-getData(URL);    */
