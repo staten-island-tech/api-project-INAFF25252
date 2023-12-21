@@ -76,3 +76,40 @@ id(DOMSelectors.form3, "pokemon-species") */
 //Pokemon name, suggest what they meant if spelled wrong for error
 //Different regional forms, "change theme"
 
+/* function species(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+ 
+async function legendary(){
+  for(let i=1; i<=20; i++){
+  try{
+    const get = await fetch(`${URL}${endpoint}${i}`);
+    const poke = await get.json();
+    console.log(poke);
+
+    if(poke.is_legendary === true){
+
+    function main(){
+      poke.forEach((item)=>  {
+      DOMSelectors.gallery.insertAdjacentHTML("beforebegin", `
+       <div class="card">
+       <img src = "${item.name}" 
+       </div>`)})
+      }
+      main();
+    }
+    if(poke.is_legendary === false){
+      console.log("none")
+    }
+  
+
+  }catch(error)
+  {console.error(error);}
+
+}
+}
+legendary();
+})}
+
+
+species(DOMSelectors.form3, "pokemon-species/") */

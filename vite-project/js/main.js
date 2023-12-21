@@ -17,15 +17,7 @@ async function getData(URL){
     console.log(error)    
   }
 }
-getData(URL);  
-
-function von(x){
-  if(x === true){
-    return "legendary"
-  }else if(x===false){
-    return 
-  }
-  }
+getData(URL); 
 
 
 function clear() {  
@@ -44,7 +36,7 @@ async function otherButtons(){
     console.log(poke);
     
     poke.results.forEach((item, index)=>  {
-      DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `
+      DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
       <div class="card">
       <h2>${item.name}</h2>
       <link rel = "stylesheet" href = >
@@ -61,5 +53,5 @@ otherButtons();
 id(DOMSelectors.form, "pokemon")
 id(DOMSelectors.form1, "type")
 id(DOMSelectors.form2, "berry")
-id(DOMSelectors.form3, "pokemon-species")
+id(DOMSelectors.form3, "region")
  
