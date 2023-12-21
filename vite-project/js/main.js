@@ -58,7 +58,6 @@ id(DOMSelectors.form3, "region")
 function search(){
   DOMSelectors.search.addEventListener("submit", function(event){
     event.preventDefault();
-    clear();
     const searchInput = DOMSelectors.input.value;
     if(searchInput){
       const url = URL + "pokemon/" + searchInput;
@@ -75,18 +74,23 @@ function search(){
       }
       getData(); 
     }
-
+    clearFields();
 })}
 search()
 
-function card(data){
+let x = data.textContent;
+console.log(x)
+function card(poke){
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
   `<div class="card">
-  <h2>${data.species.name}</h2>
+  <h2>${poke.name.value}</h2>
   </div>`
   )
 }
-card(data)
+card(x)
 
 
 
+function clearFields(){
+  DOMSelectors.input.value = ""
+  }
