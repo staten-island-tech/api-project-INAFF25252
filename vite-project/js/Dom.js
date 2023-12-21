@@ -4,6 +4,8 @@ const DOMSelectors = {
     form2: document.querySelector(".Berries"),
     form3: document.querySelector(".Region"),
     form: document.querySelector(".Main"),
+    search: document.querySelector("#form"),
+    input: document.querySelector(".pokemon"),
     h1:document.querySelectorAll("h1"),
     h2: document.querySelectorAll(".name"),
     h3:document.querySelectorAll(".type"),

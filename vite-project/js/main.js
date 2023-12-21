@@ -54,4 +54,39 @@ id(DOMSelectors.form, "pokemon")
 id(DOMSelectors.form1, "type")
 id(DOMSelectors.form2, "berry")
 id(DOMSelectors.form3, "region")
- 
+
+function search(){
+  DOMSelectors.search.addEventListener("submit", function(event){
+    event.preventDefault();
+    clear();
+    const searchInput = DOMSelectors.input.value;
+    if(searchInput){
+      const url = URL + "pokemon/" + searchInput;
+      async function getData(){
+        try{
+          const response = await fetch(url)
+          const data = await response.json();
+          console.log(data);
+          return data
+                
+        } catch(error){
+          console.log(error)    
+        }
+      }
+      getData(); 
+    }
+
+})}
+search()
+
+function card(data){
+  DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+  `<div class="card">
+  <h2>${data.species.name}</h2>
+  </div>`
+  )
+}
+card(data)
+
+
+
