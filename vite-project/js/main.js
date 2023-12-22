@@ -24,7 +24,8 @@ function clear() {
   DOMSelectors.gallery.innerHTML=''
 }
 
-function id(btn, endpoint){
+//id(DOMSelectors.form, "pokemon")
+function card(btn, endpoint){
   btn.addEventListener("click", function(event){
     event.preventDefault();
     clear();
@@ -34,15 +35,16 @@ async function otherButtons(){
     const get = await fetch(`${URL}${endpoint}`);
     const poke = await get.json();
     console.log(poke);
-    
+    //<img src = "item.front_default" class = "card-img" alt = "error"></img>
+    //<a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
     poke.results.forEach((item, index)=>  {
       DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
       <div class="card">
       <h2>${item.name}</h2>
-      <link rel = "stylesheet" href = >
       <h3>${index + 1}</h2>
-
-      </div>`)})
+      </div>
+      `)})
+   
 
   }catch(error)
   {console.error(error);}
@@ -50,10 +52,44 @@ async function otherButtons(){
 }
 otherButtons();
 })}
+
+card(DOMSelectors.form1, "type")
+card(DOMSelectors.form2, "berry")
+card(DOMSelectors.form3, "region")
+
+function id(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear()
+async function pokemon(){
+  for(let i=1; i<=99; i++){
+  try{
+    const get = await fetch(`${URL}${endpoint}/${i}`);
+    const poke = await get.json();
+    console.log(poke);
+
+    function main(poke){
+      DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+        `<div class="card">
+        <h2>${poke.name}</h2>
+        <img src = "${poke.sprites.front_default}" class = "card-img" alt = "error"></img>
+        <h3>Id: ${poke.id}</h3>
+        <h3>Base EXP: ${poke.base_experience}</h3>
+        <h3>Height: ${poke.height}</h3>
+        <h3>Weight: ${poke.weight}</h3>
+        </div>`
+        )}
+    main(poke)
+  }catch(error)
+  {console.error(error);}
+
+}
+}
+pokemon();
+})}
+
 id(DOMSelectors.form, "pokemon")
-id(DOMSelectors.form1, "type")
-id(DOMSelectors.form2, "berry")
-id(DOMSelectors.form3, "region")
+
 
 function search(){
   DOMSelectors.search.addEventListener("submit", function(event){
@@ -66,30 +102,31 @@ function search(){
           const response = await fetch(url)
           const data = await response.json();
           console.log(data);
-          return data
-                
+          
+          function cardSearch(poke){
+            DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+            `<div class="card">
+            <h2>${poke.name}</h2>
+            <img src = "${poke.sprites.front_default}" class = "card-img" alt = "error"></img>
+            <h3>Id: ${poke.id}</h3>
+            <h3>Base EXP: ${poke.base_experience}</h3>
+            <h3>Height: ${poke.height}</h3>
+            <h3>Weight: ${poke.weight}</h3>
+            </div>`
+            )
+          }
+          cardSearch(data)
+      
         } catch(error){
           console.log(error)    
         }
       }
       getData(); 
+      clear();
     }
     clearFields();
 })}
 search()
-
-let x = data.textContent;
-console.log(x)
-function card(poke){
-  DOMSelectors.gallery.insertAdjacentHTML("beforeend",
-  `<div class="card">
-  <h2>${poke.name.value}</h2>
-  </div>`
-  )
-}
-card(x)
-
-
 
 function clearFields(){
   DOMSelectors.input.value = ""

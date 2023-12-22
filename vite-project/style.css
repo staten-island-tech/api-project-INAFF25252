@@ -10,9 +10,9 @@
   --primary: var(--light-purple);
   --secondary: var(--light-green);
   /*Typography */
-  --h1: 4rem;
-  --h2: 3.375rem;
-  --h3: 2.25rem;
+  --h1: 4.5rem;
+  --h2: 3.1rem;
+  --h3: 2.1rem;
   --h4: 1.5rem;
 }
 .warm {
@@ -77,55 +77,59 @@ button:focus, button:focus-visible {
   padding: 2rem
 }
 
-.card {
-  width: 28%;
-  height: auto;
+.buttons{
   display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: space-between;
-  padding: 1rem;
+  margin-bottom:2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+}
+
+.card {
+  background-color: var(--secondary);
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  box-shadow: 10px 10px 5px 1px #5e5748;
   transition:.8s ease-in;
-  overflow: hidden;
-  cursor: pointer;
   position: relative;
-  border-radius: 1rem;
-  background-color:var(--secondary);
-  
+  width: 20%;
+  height: auto;
+  text-align: center;
 }
-
 
 .card-img{
-  position: absolute;
-  object-fit: cover;
+  display: block;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
-  transition: opacity .2s ease-out;
-}
-.card-img:hover{
-  opacity: 1;
 }
 
-.name,.veganornot,.type,.price {
-  font-size: var(--h3);
-  line-height: 1.1;
-  background-color: white;
-  text-align:center;
-}
 
 h1{
   text-align:center;
   font-size:var(--h1);
   background-color:var(--secondary);;
   margin-top:0;
+}
+
+h2{
+  font-size:var(--h2);
+}
+
+h3{
+  font-size:var(--h3);
+}
+
+.link{
+  text-align:center;
+  font-size:var(--h3);
+  margin-top:0;
+}
+
+.pokemon{
+  width: 70%;
 }
 
 @media screen and (max-width: 1200px) {

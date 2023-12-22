@@ -70,9 +70,9 @@ pokemon();
 })}
 
 id(DOMSelectors.form, "pokemon/",)
-id(DOMSelectors.form1, "type")
-id(DOMSelectors.form2, "berry")
-id(DOMSelectors.form3, "pokemon-species") */
+id(DOMSelectors.form1, "type/")
+id(DOMSelectors.form2, "berry/")
+id(DOMSelectors.form3, "region/") */
 //Pokemon name, suggest what they meant if spelled wrong for error
 //Different regional forms, "change theme"
 
@@ -113,3 +113,63 @@ legendary();
 
 
 species(DOMSelectors.form3, "pokemon-species/") */
+/* function id(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear();
+async function otherButtons(){
+
+  try{
+    const get = await fetch(`${URL}${endpoint}`);
+    const poke = await get.json();
+    console.log(poke);
+    
+    poke.results.forEach((item, index)=>  {
+      DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
+      <div class="card">
+      <h2>${item.name}</h2>
+      <a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
+      <h3>${index + 1}</h2>
+
+      </div>`)})
+
+  }catch(error)
+  {console.error(error);}
+
+}
+otherButtons();
+})}
+id(DOMSelectors.form, "pokemon")
+id(DOMSelectors.form1, "type")
+id(DOMSelectors.form2, "berry")
+id(DOMSelectors.form3, "region") */
+/* function id(btn, endpoint){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear();
+async function otherButtons(){
+
+  try{
+    const get = await fetch(`${URL}${endpoint}`);
+    const poke = await get.json();
+    console.log(poke);
+    //<img src = "item.front_default" class = "card-img" alt = "error"></img>
+    //<a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
+    poke.results.forEach((item, index)=>  {
+      DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
+      <div class="card">
+      <h2>${item.name}</h2>
+      <h3>${index + 1}</h2>
+      </div>
+      `)})
+   
+
+  }catch(error)
+  {console.error(error);}
+
+}
+otherButtons();
+})}
+id(DOMSelectors.form1, "type")
+id(DOMSelectors.form2, "berry")
+id(DOMSelectors.form3, "region") */
