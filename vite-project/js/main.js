@@ -24,6 +24,7 @@ function clear() {
   DOMSelectors.gallery.innerHTML=''
 }
 
+
 //id(DOMSelectors.form, "pokemon")
 function card(btn, endpoint){
   btn.addEventListener("click", function(event){
@@ -66,8 +67,9 @@ async function pokemon(){
   try{
     const get = await fetch(`${URL}${endpoint}/${i}`);
     const poke = await get.json();
+  
     console.log(poke);
-
+    
     function main(poke){
       DOMSelectors.gallery.insertAdjacentHTML("beforeend",
         `<div class="card">
@@ -76,7 +78,7 @@ async function pokemon(){
         <h3>Id: ${poke.id}</h3>
         <h3>Base EXP: ${poke.base_experience}</h3>
         <h3>Height: ${poke.height}</h3>
-        <h3>Weight: ${poke.weight}</h3>
+        <h3>Weight: ${poke.weight/10} kg</h3>
         </div>`
         )}
     main(poke)
