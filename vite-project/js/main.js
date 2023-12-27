@@ -10,22 +10,19 @@ function mystic(){
           document.body.classList.add("mystic");
           document.body.classList.remove("maintheme")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
+      
       } 
       if (document.body.classList.contains("valor")) {
           document.body.classList.add("mystic");
           document.body.classList.remove("valor")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
+  
       } 
       if (document.body.classList.contains("instinct")) {
           document.body.classList.add("mystic");
           document.body.classList.remove("instinct")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
+    
       }  
   })
 
@@ -38,22 +35,16 @@ function instinct(){
           document.body.classList.add("instinct");
           document.body.classList.remove("maintheme")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
-      } 
+      }
       if (document.body.classList.contains("mystic")) {
           document.body.classList.add("instinct");
           document.body.classList.remove("mystic")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
       } 
       if (document.body.classList.contains("valor")) {
           document.body.classList.add("instinct");
           document.body.classList.remove("valor")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
       } 
   })
 
