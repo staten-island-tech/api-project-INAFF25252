@@ -18,7 +18,9 @@ const DOMSelectors = {
     text:document.querySelector("#text"),
     empty:document.querySelector(".nothing"),
     pic:document.querySelector(".img"),
-    theme:document.querySelector(".theme")
+    theme:document.querySelector(".Mystic"),
+    theme2:document.querySelector(".Instinct"),
+    theme3:document.querySelector(".Valor"),
     /* point:document.querySelectorAll(".point"), //gets all instances of this
     pointTwo:document.getElementById("pointTwo"), */
   };

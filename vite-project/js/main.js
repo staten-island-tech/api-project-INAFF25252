@@ -2,6 +2,94 @@ import '/style.css'
 import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
+
+function mystic(){
+  DOMSelectors.theme.addEventListener("click", function(event){
+      event.preventDefault
+      if (document.body.classList.contains("maintheme")) {
+          document.body.classList.add("mystic");
+          document.body.classList.remove("maintheme")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      } 
+      if (document.body.classList.contains("valor")) {
+          document.body.classList.add("mystic");
+          document.body.classList.remove("valor")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      } 
+      if (document.body.classList.contains("instinct")) {
+          document.body.classList.add("mystic");
+          document.body.classList.remove("instinct")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      }  
+  })
+
+}
+
+function instinct(){
+  DOMSelectors.theme2.addEventListener("click", function(event){
+      event.preventDefault
+      if (document.body.classList.contains("maintheme")) {
+          document.body.classList.add("instinct");
+          document.body.classList.remove("maintheme")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      } 
+      if (document.body.classList.contains("mystic")) {
+          document.body.classList.add("instinct");
+          document.body.classList.remove("mystic")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      } 
+      if (document.body.classList.contains("valor")) {
+          document.body.classList.add("instinct");
+          document.body.classList.remove("valor")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      } 
+  })
+
+}
+
+function valor(){
+  DOMSelectors.theme3.addEventListener("click", function(event){
+      event.preventDefault
+      if (document.body.classList.contains("maintheme")) {
+          document.body.classList.add("valor");
+          document.body.classList.remove("maintheme")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      }
+      if (document.body.classList.contains("mystic")) {
+          document.body.classList.add("valor");
+          document.body.classList.remove("mystic")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      }  
+      if (document.body.classList.contains("instinct")) {
+          document.body.classList.add("valor");
+          document.body.classList.remove("instinct")
+          document.body.classList.add("main");
+          document.h1.classList.add("second");
+          DOMSelectors.card.classList.toggle("second");
+      }  
+  })
+}
+
+mystic();
+instinct();
+valor();
+
 const URL = "https://pokeapi.co/api/v2/"
 console.log(fetch(URL));
 //const URL = "https://pokeapi.co/api/v2/{endpoint}/"
@@ -106,10 +194,13 @@ function main(x){
   if(x.types.length == 2){
    let type = z
    console.log(type)
-  }else{
-    let type = null
-    console.log(type)
-  } */
+  }
+  const y = null
+  if(x.types.length == 1){
+   let type = y
+   console.log(type)
+  }
+ */
  
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
     `<div class="card">
