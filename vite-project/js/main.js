@@ -139,8 +139,40 @@ function card(btn, endpoint){
 }
 
 card(DOMSelectors.form1, "type")
-card(DOMSelectors.form2, "berry")
 card(DOMSelectors.form3, "region")
+
+function berries(){
+  DOMSelectors.form2.addEventListener("click", function(event){
+    event.preventDefault();
+    clear()
+    async function berry(){
+      for(let i=1; i<=64; i++){
+        try{
+          const get = await fetch(`${URL}berry/${i}`);
+          const ber = await get.json();
+          console.log(ber);
+          function fruit(x){
+            DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+            `<div class="card">
+            <h2>${x.name}</h2>
+            <h3>Id: ${x.id}</h3>
+            <h3>Size: ${x.size}</h3>
+            <h3>Firmness: ${x.firmness.name}</h3>
+            <h3>Firmness: ${x.smoothness}</h3>
+            </div>`
+            )
+          }
+          fruit(ber)
+        }catch(error){
+          console.error(error);
+        }
+      }
+    }
+    berry();
+  })
+}
+
+berries();
 
 function id(){
   DOMSelectors.form.addEventListener("click", function(event){

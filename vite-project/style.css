@@ -78,7 +78,7 @@ button{
   background-color: var(--secondary);
 }
 
-#submit{
+#submit, .search{
   text-align: center;
   display: inline-block;
   align-items: center;
