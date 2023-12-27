@@ -174,12 +174,12 @@ function berries(){
 
 berries();
 
-function id(){
-  DOMSelectors.form.addEventListener("click", function(event){
+function id(btn, x, y){
+  btn.addEventListener("click", function(event){
     event.preventDefault();
     clear()
     async function pokemon(){
-      for(let i=1; i<=99; i++){
+      for(let i=x; i<=y; i++){
         try{
           const get = await fetch(`${URL}pokemon/${i}`);
           const poke = await get.json();
@@ -194,7 +194,11 @@ function id(){
   })
 }
 
-id();
+id(DOMSelectors.form, 1, 50);
+id(DOMSelectors.form4, 51, 100)
+id(DOMSelectors.form5, 101, 150);
+id(DOMSelectors.form6, 151, 200);
+id(DOMSelectors.form7, 201, 250);
 
 function search(){
   DOMSelectors.search.addEventListener("submit", function(event){
