@@ -104,24 +104,24 @@ function clear() {
   DOMSelectors.gallery.innerHTML=''
 }
 
-function clearButtons() {  
-  DOMSelectors.buttonFlip.innerHTML=''
-}
+// function clearButtons() {  
+//   DOMSelectors.buttonFlip.innerHTML=''
+// }
 
-function backButtons() {  
-  DOMSelectors.buttonFlip.innerHTML=`
-  <button type = "button" class = "next1">Page 2</button>
-  <button type = "button" class = "next2">Page 3</button>
-  <button type = "button" class = "next3">Page 4</button>
-  <button type = "button" class = "next4">Page 5</button>`
-}
+// function backButtons() {  
+//   DOMSelectors.buttonFlip.innerHTML=`
+//   <button type = "button" class = "next1">Page 2</button>
+//   <button type = "button" class = "next2">Page 3</button>
+//   <button type = "button" class = "next3">Page 4</button>
+//   <button type = "button" class = "next4">Page 5</button>`
+// }
 
 //id(DOMSelectors.form, "pokemon")
 function card(btn, endpoint){
   btn.addEventListener("click", function(event){
     event.preventDefault();
     clear();
-    clearButtons()
+    //clearButtons()
     async function otherButtons(){
 
       try{
@@ -153,7 +153,7 @@ function berries(){
   DOMSelectors.form2.addEventListener("click", function(event){
     event.preventDefault();
     clear()
-    clearButtons()
+    //clearButtons()
     async function berry(){
       for(let i=1; i<=64; i++){
         try{
@@ -200,7 +200,7 @@ function id(btn, x, y){
       }
     }
     pokemon();
-    backButtons()})
+    })
 }
 
 id(DOMSelectors.form, 1, 50);
@@ -227,7 +227,7 @@ function search(){
       }
       getData(); 
       clear();
-      clearButtons()
+      //clearButtons()
     }
     clearFields();
   })
