@@ -5,6 +5,7 @@ const DOMSelectors = {
     form2: document.querySelector(".Berries"),
     form3: document.querySelector(".Region"),
     form: document.querySelector(".Main"),
+    buttonFlip: document.querySelector(".Page"),
     form4: document.querySelector(".next1"),
     form5: document.querySelector(".next2"),
     form6: document.querySelector(".next3"),
