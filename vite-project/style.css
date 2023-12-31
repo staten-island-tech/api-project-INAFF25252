@@ -1,11 +1,11 @@
 :root {
   --main: rgb(235, 144, 137);
   --white:white;
-  --light-yellow: #ebec98;
-  --yellow: #e6ba0e;
+  --light-yellow: #e1b70f;
+  --yellow: #a3940a;
   --light-red: #f8baba;
   --dark-red: #a66363;
-  --light-blue:#a5ccff;
+  --light-blue:#8badd8;
   --blue:#5b5a9c;
   --gray: #252c30;
   --primary: var(--main);
@@ -44,8 +44,14 @@
 .main{
   background-color: var(--primary);
 }
-.second {
+.heading{
   background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-height: 20%;
+  width: auto;
+  justify-content: center;
 }
 
 body {
@@ -136,6 +142,14 @@ button:focus, button:focus-visible {
 .card-img{
   display: block;
   width: 100%;
+}
+.logo{
+  float: left;
+  width: 10%;
+  height: auto;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 

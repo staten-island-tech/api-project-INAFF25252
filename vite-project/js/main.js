@@ -3,84 +3,94 @@ import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
 
-function mystic(){
+function mystic(name){
   DOMSelectors.theme.addEventListener("click", function(event){
       event.preventDefault
       if (document.body.classList.contains("maintheme")) {
           document.body.classList.add("mystic");
           document.body.classList.remove("maintheme")
           document.body.classList.add("main");
-      
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       } 
       if (document.body.classList.contains("valor")) {
           document.body.classList.add("mystic");
           document.body.classList.remove("valor")
           document.body.classList.add("main");
-  
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       } 
       if (document.body.classList.contains("instinct")) {
           document.body.classList.add("mystic");
           document.body.classList.remove("instinct")
           document.body.classList.add("main");
-    
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       }  
   })
 
 }
 
-function instinct(){
+function instinct(name){
   DOMSelectors.theme2.addEventListener("click", function(event){
       event.preventDefault
       if (document.body.classList.contains("maintheme")) {
           document.body.classList.add("instinct");
           document.body.classList.remove("maintheme")
           document.body.classList.add("main");
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       }
       if (document.body.classList.contains("mystic")) {
           document.body.classList.add("instinct");
           document.body.classList.remove("mystic")
           document.body.classList.add("main");
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       } 
       if (document.body.classList.contains("valor")) {
           document.body.classList.add("instinct");
           document.body.classList.remove("valor")
           document.body.classList.add("main");
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       } 
   })
 
 }
 
-function valor(){
+function valor(name){
   DOMSelectors.theme3.addEventListener("click", function(event){
       event.preventDefault
       if (document.body.classList.contains("maintheme")) {
           document.body.classList.add("valor");
           document.body.classList.remove("maintheme")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
       }
       if (document.body.classList.contains("mystic")) {
           document.body.classList.add("valor");
           document.body.classList.remove("mystic")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
-      }  
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
+      }
+        
       if (document.body.classList.contains("instinct")) {
           document.body.classList.add("valor");
           document.body.classList.remove("instinct")
           document.body.classList.add("main");
-          document.h1.classList.add("second");
-          DOMSelectors.card.classList.toggle("second");
-      }  
+          let img = document.querySelector(".logo");
+          img.setAttribute("src", name);
+  
+      }
   })
 }
 
-mystic();
-instinct();
-valor();
-
+mystic('/mystic.png');
+instinct('/instinct.png');
+valor('/valor.png');
 
 //const URL2 = "https://ex.traction.one/pokedex/pokemon/"
 const URL = "https://pokeapi.co/api/v2/"
@@ -123,7 +133,6 @@ function card(btn, endpoint){
     clear();
     //clearButtons()
     async function otherButtons(){
-
       try{
        const get = await fetch(`${URL}${endpoint}`);
        const poke = await get.json();
@@ -133,7 +142,7 @@ function card(btn, endpoint){
         poke.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
-            <h2>${item.name}</h2>
+            <h3>${item.name}</h3>
             <h3>${index + 1}</h2>
             </div>
       `   )
@@ -147,7 +156,7 @@ function card(btn, endpoint){
 }
 
 card(DOMSelectors.form1, "type")
-card(DOMSelectors.form3, "region")
+card(DOMSelectors.form3, "region") 
 
 function berries(){
   DOMSelectors.form2.addEventListener("click", function(event){

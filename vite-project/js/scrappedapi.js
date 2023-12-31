@@ -212,3 +212,27 @@ id(DOMSelectors.form3, "region") */
   )
  }
 } */
+/* function typeData(btn,URL,i){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear();
+    async function typeFilter(){
+      try{
+        const response = await fetch(`${URL}type/${i}`)
+        const data = await response.json();
+        console.log(data);
+        data.results.forEach((item)=>  {
+          DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
+          <div class="card">
+          <h3>${item}</h2>
+          </div>
+          `)
+        })
+      }catch(error){
+        console.log(error)    
+      }
+    }
+    typeFilter()
+  })
+}
+typeData(DOMSelectors.var1,URL,"1"); */
