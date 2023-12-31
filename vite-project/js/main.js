@@ -173,6 +173,7 @@ function berries(){
             DOMSelectors.gallery.insertAdjacentHTML("beforeend",
             `<div class="card">
             <h2>${x.name}</h2>
+            <img src = "/${x.name}-berry.png" class = "card-img" alt = "error"></img>
             <h3>Id: ${x.id}</h3>
             <h3>Size: ${x.size}</h3>
             <h3>Firmness: ${x.firmness.name}</h3>
@@ -266,7 +267,7 @@ function main(x){
     <h2>${x.name}</h2>
     <img src = "${x.sprites.front_default}" class = "card-img" alt = "error"></img>
     <h3>Id: ${x.id}</h3>
-    <h3>Type: ${x.types[0].type.name}</h3>
+    <h3>Type 1: ${x.types[0].type.name}</h3>
     <h3>Type 2: ${string}</h3>
     <h3>Base EXP: ${x.base_experience}</h3>
     <h3>Height: ${x.height}</h3>
