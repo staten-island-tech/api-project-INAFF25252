@@ -234,26 +234,31 @@ function search(){
 }
 search()
 
-
-function main(x){
-  /*const z = x.types[1].type.name
+function type(x){
   if(x.types.length == 2){
-   let type = z
-   console.log(type)
+    const z = x.types[1].type.name
+    let type = z
+    console.log(type)
+    return type
   }
-  const y = null
   if(x.types.length == 1){
-   let type = y
-   console.log(type)
+    const y = "only one"
+    let type = y
+    console.log(type)
+    return type
   }
- */
- 
+type()
+}
+function main(x){
+  const string = type(x)
+
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
     `<div class="card">
     <h2>${x.name}</h2>
     <img src = "${x.sprites.front_default}" class = "card-img" alt = "error"></img>
     <h3>Id: ${x.id}</h3>
     <h3>Type: ${x.types[0].type.name}</h3>
+    <h3>Type: ${string}</h3>
     <h3>Base EXP: ${x.base_experience}</h3>
     <h3>Height: ${x.height}</h3>
     <h3>Weight: ${x.weight/10} kg</h3>
