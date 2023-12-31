@@ -270,7 +270,7 @@ function main(x){
     <h3>Type 1: ${x.types[0].type.name}</h3>
     <h3>Type 2: ${string}</h3>
     <h3>Base EXP: ${x.base_experience}</h3>
-    <h3>Height: ${x.height}</h3>
+    <h3>Height: ${x.height/10} m</h3>
     <h3>Weight: ${x.weight/10} kg</h3>
     </div>`
   )

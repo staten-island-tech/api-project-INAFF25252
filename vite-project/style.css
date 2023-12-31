@@ -1,8 +1,8 @@
 :root {
   --main: rgb(235, 144, 137);
   --white:white;
-  --light-yellow: #f7c709;
-  --yellow: #bf9713;
+  --light-yellow: #e0b401;
+  --yellow: #ab8402;
   --light-red: #f8baba;
   --dark-red: #a66363;
   --light-blue:#8badd8;
@@ -23,10 +23,16 @@
   --h4: 1.5rem;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 .maintheme{
   --primary: var(--main);
   --secondary: var(--white);
 }
+
 .valor {
   --primary: var(--dark-red);
   --secondary: var(--light-red);
@@ -115,7 +121,7 @@ button:focus, button:focus-visible {
   padding: 2rem
 }
 
-.buttons, .Team, .Page{
+.buttons, .Page{
   display: flex;
   margin-bottom:2rem;
   justify-content: space-around;
@@ -124,7 +130,17 @@ button:focus, button:focus-visible {
   text-align: center;
 }
 
-.card {
+.Team{
+  display: flex;
+  margin-bottom:2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+  background-color: gray;
+}
+
+.card{
   background-color: var(--secondary);
   padding-left: 2rem;
   padding-right: 2rem;
