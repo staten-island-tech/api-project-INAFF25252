@@ -258,7 +258,7 @@ function main(x){
     <img src = "${x.sprites.front_default}" class = "card-img" alt = "error"></img>
     <h3>Id: ${x.id}</h3>
     <h3>Type: ${x.types[0].type.name}</h3>
-    <h3>Type: ${string}</h3>
+    <h3>Type 2: ${string}</h3>
     <h3>Base EXP: ${x.base_experience}</h3>
     <h3>Height: ${x.height}</h3>
     <h3>Weight: ${x.weight/10} kg</h3>
