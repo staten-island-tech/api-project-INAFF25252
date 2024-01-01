@@ -94,20 +94,26 @@ valor('/valor.png');
 
 //const URL2 = "https://ex.traction.one/pokedex/pokemon/"
 const URL = "https://pokeapi.co/api/v2/"
+const dog = "https://dog.ceo/api/breeds/image/random";
 console.log(fetch(URL));
+console.log(fetch(dog));
 //const URL = "https://pokeapi.co/api/v2/{endpoint}/"
 //use ? for querue parameters, & is adding additional auerues.
-async function getData(URL){
+async function getData(URL, URL2){
   try{
     const response = await fetch(URL)
     const data = await response.json();
     console.log(data);
-    return data
+    const dogResponse = await fetch(URL2)
+    const dogData = await dogResponse.json();
+    console.log(dogData);
+    return dogData, data
+    
   } catch(error){
     console.log(error)    
   }
 }
-getData(URL); 
+getData(URL, dog); 
 //getData(URL2); 
 
 function clear() {  
@@ -232,7 +238,16 @@ function search(){
           console.log(data);
           main(data);
         }catch(error){
-          console.log(error)    
+          const dogResponse = await fetch("https://dog.ceo/api/breeds/image/random")
+          const dogData = await dogResponse.json();
+          console.log(error)
+          DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+          `
+          <div class = "error">ERROR 404: Try Again</div>
+          <div class = "error">Here take a dog pic:</div>
+          <img src = "${dogData.message}" class = "card-img" alt = "error"></img>
+          `
+          )    
         }
       }
       getData(); 
