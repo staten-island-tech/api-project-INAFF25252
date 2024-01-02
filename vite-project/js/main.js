@@ -180,7 +180,7 @@ function types(){
             `<div class="card">
             <h2>${x.name.toUpperCase()}</h2>
             <h3>${x.id}</h3>
-            <button type = "button" class = "var${i}">${x.name.toUpperCase()}</button>
+            <button type = "button" class = "var${i}">All Pokemon: ${x.name.toUpperCase()}</button>
             </div>`
             )
           }
