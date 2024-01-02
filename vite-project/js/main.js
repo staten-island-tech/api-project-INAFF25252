@@ -3,96 +3,38 @@ import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
 
-function mystic(name){
-  DOMSelectors.theme.addEventListener("click", function(event){
-      event.preventDefault
-      if (document.body.classList.contains("maintheme")) {
-          document.body.classList.add("mystic");
-          document.body.classList.remove("maintheme")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      } 
-      if (document.body.classList.contains("valor")) {
-          document.body.classList.add("mystic");
-          document.body.classList.remove("valor")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      } 
-      if (document.body.classList.contains("instinct")) {
-          document.body.classList.add("mystic");
-          document.body.classList.remove("instinct")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      }  
+function theme(btn, x, y, z, m, name){
+  btn.addEventListener("click", function(event){
+    event.preventDefault
+    if (document.body.classList.contains(m)) {
+        document.body.classList.add(x);
+        document.body.classList.remove(m)
+        document.body.classList.add("main");
+        let img = document.querySelector(".logo");
+        img.setAttribute("src", name);
+    } 
+    if (document.body.classList.contains(z)) {
+        document.body.classList.add(x);
+        document.body.classList.remove(z)
+        document.body.classList.add("main");
+        let img = document.querySelector(".logo");
+        img.setAttribute("src", name);
+    } 
+    if (document.body.classList.contains(y)) {
+        document.body.classList.add(x);
+        document.body.classList.remove(y)
+        document.body.classList.add("main");
+        let img = document.querySelector(".logo");
+        img.setAttribute("src", name);
+    }  
   })
 
 }
 
-function instinct(name){
-  DOMSelectors.theme2.addEventListener("click", function(event){
-      event.preventDefault
-      if (document.body.classList.contains("maintheme")) {
-          document.body.classList.add("instinct");
-          document.body.classList.remove("maintheme")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      }
-      if (document.body.classList.contains("mystic")) {
-          document.body.classList.add("instinct");
-          document.body.classList.remove("mystic")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      } 
-      if (document.body.classList.contains("valor")) {
-          document.body.classList.add("instinct");
-          document.body.classList.remove("valor")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      } 
-  })
+theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme",'/mystic.png');
+theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme",'/instinct.png');
+theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme",'/valor.png');
 
-}
-
-function valor(name){
-  DOMSelectors.theme3.addEventListener("click", function(event){
-      event.preventDefault
-      if (document.body.classList.contains("maintheme")) {
-          document.body.classList.add("valor");
-          document.body.classList.remove("maintheme")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      }
-      if (document.body.classList.contains("mystic")) {
-          document.body.classList.add("valor");
-          document.body.classList.remove("mystic")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-      }
-        
-      if (document.body.classList.contains("instinct")) {
-          document.body.classList.add("valor");
-          document.body.classList.remove("instinct")
-          document.body.classList.add("main");
-          let img = document.querySelector(".logo");
-          img.setAttribute("src", name);
-  
-      }
-  })
-}
-
-mystic('/mystic.png');
-instinct('/instinct.png');
-valor('/valor.png');
-
-//const URL2 = "https://ex.traction.one/pokedex/pokemon/"
 const URL = "https://pokeapi.co/api/v2/"
 const dog = "https://dog.ceo/api/breeds/image/random";
 console.log(fetch(URL));
@@ -114,25 +56,7 @@ async function getData(URL, URL2){
   }
 }
 getData(URL, dog); 
-//getData(URL2); 
 
-function clear() {  
-  DOMSelectors.gallery.innerHTML=''
-}
-
-// function clearButtons() {  
-//   DOMSelectors.buttonFlip.innerHTML=''
-// }
-
-// function backButtons() {  
-//   DOMSelectors.buttonFlip.innerHTML=`
-//   <button type = "button" class = "next1">Page 2</button>
-//   <button type = "button" class = "next2">Page 3</button>
-//   <button type = "button" class = "next3">Page 4</button>
-//   <button type = "button" class = "next4">Page 5</button>`
-// }
-
-//id(DOMSelectors.form, "pokemon")
 function card(btn, endpoint){
   btn.addEventListener("click", function(event){
     event.preventDefault();
@@ -150,9 +74,49 @@ function card(btn, endpoint){
             <div class="card">
             <h2>${item.name}</h2>
             <h3>${index + 1}</h2>
+            <button type = "button" class = "var${index + 1}">All Pokemon: ${item.name}</button>
             </div>`   
           )
         })
+        
+        const DOM = {
+          var1:document.querySelector(".var1"),
+          var2:document.querySelector(".var2"),
+          var3:document.querySelector(".var3"),
+          var4:document.querySelector(".var4"),
+          var5:document.querySelector(".var5"),
+          var6:document.querySelector(".var6"),
+          var7:document.querySelector(".var7"),
+          var8:document.querySelector(".var8"),
+          var9:document.querySelector(".var9"),
+          var10:document.querySelector(".var10"),
+          var11:document.querySelector(".var11"),
+          var12:document.querySelector(".var12"),
+          var13:document.querySelector(".var13"),
+          var14:document.querySelector(".var14"),
+          var15:document.querySelector(".var15"),
+          var16:document.querySelector(".var16"),
+          var17:document.querySelector(".var17"),
+          var18:document.querySelector(".var18"),
+        }
+        typeData(DOM.var1,"1")
+        typeData(DOM.var2,"2")
+        typeData(DOM.var3,"3")
+        typeData(DOM.var4,"4")
+        typeData(DOM.var5,"5")
+        typeData(DOM.var6,"6")
+        typeData(DOM.var7,"7")
+        typeData(DOM.var8,"8")
+        typeData(DOM.var9,"9")
+        typeData(DOM.var10,"10")
+        typeData(DOM.var11,"11")
+        typeData(DOM.var12,"12")
+        typeData(DOM.var13,"13")
+        typeData(DOM.var14,"14")
+        typeData(DOM.var15,"15")
+        typeData(DOM.var16,"16")
+        typeData(DOM.var17,"17")
+        typeData(DOM.var18,"18")
       }catch(error){
         console.error(error);
       } 
@@ -162,80 +126,38 @@ function card(btn, endpoint){
   })
 }
 
-card(DOMSelectors.form3, "region") 
+card(DOMSelectors.form1, "type") 
 
-function types(){
-  DOMSelectors.form1.addEventListener("click", function(event){
+function regions(btn, endpoint){
+  btn.addEventListener("click", function(event){
     event.preventDefault();
-    clear()
+    clear();
     //clearButtons()
-    async function type(){
-      for(let i=1; i<=18; i++){
-        try{
-          const get = await fetch(`${URL}type/${i}`);
-          const ty = await get.json();
-          console.log(ty);
-          function typeCard(x){
-            DOMSelectors.gallery.insertAdjacentHTML("beforeend",
-            `<div class="card">
-            <h2>${x.name.toUpperCase()}</h2>
-            <h3>${x.id}</h3>
-            <button type = "button" class = "var${i}">All Pokemon: ${x.name.toUpperCase()}</button>
-            </div>`
-            )
-          }
-          typeCard(ty)
-          const DOM = {
-            var1:document.querySelector(".var1"),
-            var2:document.querySelector(".var2"),
-            var3:document.querySelector(".var3"),
-            var4:document.querySelector(".var4"),
-            var5:document.querySelector(".var5"),
-            var6:document.querySelector(".var6"),
-            var7:document.querySelector(".var7"),
-            var8:document.querySelector(".var8"),
-            var9:document.querySelector(".var9"),
-            var10:document.querySelector(".var10"),
-            var11:document.querySelector(".var11"),
-            var12:document.querySelector(".var12"),
-            var13:document.querySelector(".var13"),
-            var14:document.querySelector(".var14"),
-            var15:document.querySelector(".var15"),
-            var16:document.querySelector(".var16"),
-            var17:document.querySelector(".var17"),
-            var18:document.querySelector(".var18"),
-            var19:document.querySelector(".var19"),
-            var20:document.querySelector(".var20"),
-          }
-          console.log(DOM)
-          typeData(DOM.var1,"1")
-          typeData(DOM.var2,"2")
-          typeData(DOM.var3,"3")
-          typeData(DOM.var4,"4")
-          typeData(DOM.var5,"5")
-          typeData(DOM.var6,"6")
-          typeData(DOM.var7,"7")
-          typeData(DOM.var8,"8")
-          typeData(DOM.var9,"9")
-          typeData(DOM.var10,"10")
-          typeData(DOM.var11,"11")
-          typeData(DOM.var12,"12")
-          typeData(DOM.var13,"13")
-          typeData(DOM.var14,"14")
-          typeData(DOM.var15,"15")
-          typeData(DOM.var16,"16")
-          typeData(DOM.var17,"17")
-          typeData(DOM.var18,"18")
-        }catch(error){
-          console.error(error);
-        }
-      }
+    async function region(){
+      try{
+       const get = await fetch(`${URL}${endpoint}`);
+       const region = await get.json();
+        console.log(region);
+        //<img src = "item.front_default" class = "card-img" alt = "error"></img>
+        //<a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
+        region.results.forEach((item, index)=>  {
+          DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
+            <div class="card">
+            <h2>${item.name}</h2>
+            <h3>${index + 1}</h2>
+            </div>`   
+          )
+        })
+      }catch(error){
+        console.error(error);
+      } 
     }
-    type();
+    region();
+    
   })
 }
 
-types();
+regions(DOMSelectors.form3, "region") 
 
 function typeData(btn,i){
   btn.addEventListener("click", function(event){
@@ -261,8 +183,6 @@ function typeData(btn,i){
     typeFilter(URL)
   })
 }
-
-
 
 function berries(){
   DOMSelectors.form2.addEventListener("click", function(event){
@@ -395,3 +315,18 @@ function clearFields(){
   DOMSelectors.input.value = ""
   }
 
+function clear() {  
+  DOMSelectors.gallery.innerHTML=''
+}
+
+// function clearButtons() {  
+//   DOMSelectors.buttonFlip.innerHTML=''
+// }
+
+// function backButtons() {  
+//   DOMSelectors.buttonFlip.innerHTML=`
+//   <button type = "button" class = "next1">Page 2</button>
+//   <button type = "button" class = "next2">Page 3</button>
+//   <button type = "button" class = "next3">Page 4</button>
+//   <button type = "button" class = "next4">Page 5</button>`
+// }
