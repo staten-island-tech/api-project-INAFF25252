@@ -2,7 +2,6 @@ import '/style.css'
 import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
-
 function theme(btn, x, y, z, m, name){
   btn.addEventListener("click", function(event){
     event.preventDefault
@@ -28,7 +27,6 @@ function theme(btn, x, y, z, m, name){
         img.setAttribute("src", name);
     }  
   })
-
 }
 
 theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme",'/mystic.png');
@@ -49,8 +47,7 @@ async function getData(URL, URL2){
     const dogResponse = await fetch(URL2)
     const dogData = await dogResponse.json();
     console.log(dogData);
-    return dogData, data
-    
+    return dogData, data 
   } catch(error){
     console.log(error)    
   }
@@ -67,8 +64,6 @@ function card(btn, endpoint){
        const get = await fetch(`${URL}${endpoint}`);
        const poke = await get.json();
         console.log(poke);
-        //<img src = "item.front_default" class = "card-img" alt = "error"></img>
-        //<a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
         poke.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
@@ -77,8 +72,7 @@ function card(btn, endpoint){
             <button type = "button" class = "var${index + 1}">All Pokemon: ${item.name}</button>
             </div>`   
           )
-        })
-        
+        })  
         const DOM = {
           var1:document.querySelector(".var1"),
           var2:document.querySelector(".var2"),
@@ -121,11 +115,9 @@ function card(btn, endpoint){
         console.error(error);
       } 
     }
-    otherButtons();
-    
+    otherButtons();    
   })
 }
-
 card(DOMSelectors.form1, "type") 
 
 function regions(btn, endpoint){
@@ -138,8 +130,6 @@ function regions(btn, endpoint){
        const get = await fetch(`${URL}${endpoint}`);
        const region = await get.json();
         console.log(region);
-        //<img src = "item.front_default" class = "card-img" alt = "error"></img>
-        //<a href= "${URL}${endpoint}/${index + 1}">Pokemon Info</a>
         region.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
@@ -153,10 +143,8 @@ function regions(btn, endpoint){
       } 
     }
     region();
-    
   })
 }
-
 regions(DOMSelectors.form3, "region") 
 
 function typeData(btn,i){
@@ -216,7 +204,6 @@ function berries(){
     berry();
   })
 }
-
 berries();
 
 function id(btn, x, y){
@@ -236,9 +223,8 @@ function id(btn, x, y){
       }
     }
     pokemon();
-    })
+  })
 }
-
 id(DOMSelectors.form, 1, 50);
 id(DOMSelectors.form4, 51, 100)
 id(DOMSelectors.form5, 101, 150);
@@ -294,9 +280,9 @@ function type(x){
   }
 type()
 }
+
 function main(x){
   const string = type(x)
-
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
     `<div class="card">
     <h2>${x.name.toUpperCase()}</h2>
