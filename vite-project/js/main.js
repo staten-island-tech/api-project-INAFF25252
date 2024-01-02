@@ -2,7 +2,7 @@ import '/style.css'
 import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
-function theme(btn, x, y, z, m, name){
+function theme(btn, x, y, z, m, i, name){
   btn.addEventListener("click", function(event){
     event.preventDefault
     if (document.body.classList.contains(m)) {
@@ -26,12 +26,15 @@ function theme(btn, x, y, z, m, name){
         let img = document.querySelector(".logo");
         img.setAttribute("src", name);
     }  
+    if (document.body.classList.contains(i)) {
+        DOMSelectors.title.add(".white");
+  }  
   })
 }
 
-theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme",'/mystic.png');
-theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme",'/instinct.png');
-theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme",'/valor.png');
+theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme","instinct",'/mystic.png');
+theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme","instinct",'/instinct.png');
+theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme","instinct",'/valor.png');
 
 const URL = "https://pokeapi.co/api/v2/"
 const dog = "https://dog.ceo/api/breeds/image/random";
@@ -286,7 +289,7 @@ function main(x){
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
     `<div class="card">
     <h2>${x.name.toUpperCase()}</h2>
-    <img src = "${x.sprites.front_default}" class = "card-img" alt = "error"></img>
+    <img src = "${x.sprites.front_default}" class = "card-img" alt = "pokemon error"></img>
     <h3>Id: ${x.id}</h3>
     <h3>Type 1: ${x.types[0].type.name}</h3>
     <h3>Type 2: ${string}</h3>

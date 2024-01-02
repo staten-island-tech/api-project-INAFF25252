@@ -1,4 +1,5 @@
 const DOMSelectors = {
+    title: document.querySelector(".second"),
     card: document.querySelector(".card"),
     link: document.querySelectorAll(".link"),
     form1: document.querySelector(".Types"),

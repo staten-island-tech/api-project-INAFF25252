@@ -41,6 +41,7 @@ html {
 .instinct {
   --primary: var(--yellow);
   --secondary: var(--light-yellow);
+  --white:var(--white);
 }
 
 .mystic {
