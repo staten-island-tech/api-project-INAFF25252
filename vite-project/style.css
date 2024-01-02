@@ -18,8 +18,8 @@
   --secondary: var(--blue);
   /*Typography */
   --h1: 4.5rem;
-  --h2: 3.1rem;
-  --h3: 2.1rem;
+  --h2: 2.2rem;
+  --h3: 1.8rem;
   --h4: 1.5rem;
   --h5: 1rem;
 }
@@ -211,6 +211,7 @@ h1{
 
 h2{
   font-size:var(--h2);
+  text-align:center;
 }
 
 h3{

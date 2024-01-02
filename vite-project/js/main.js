@@ -148,52 +148,11 @@ function card(btn, endpoint){
         poke.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
-            <button type = "button" class = "var${index+1}">${item.name.toUpperCase()}</button>
+            <h2>${item.name}</h2>
             <h3>${index + 1}</h2>
             </div>`   
           )
         })
-        const DOM = {
-          var1:document.querySelector(".var1"),
-          var2:document.querySelector(".var2"),
-          var3:document.querySelector(".var3"),
-          var4:document.querySelector(".var4"),
-          var5:document.querySelector(".var5"),
-          var6:document.querySelector(".var6"),
-          var7:document.querySelector(".var7"),
-          var8:document.querySelector(".var8"),
-          var9:document.querySelector(".var9"),
-          var10:document.querySelector(".var10"),
-          var11:document.querySelector(".var11"),
-          var12:document.querySelector(".var12"),
-          var13:document.querySelector(".var13"),
-          var14:document.querySelector(".var14"),
-          var15:document.querySelector(".var15"),
-          var16:document.querySelector(".var16"),
-          var17:document.querySelector(".var17"),
-          var18:document.querySelector(".var18"),
-          var19:document.querySelector(".var19"),
-          var20:document.querySelector(".var20"),
-        }
-        console.log(DOM)
-        typeData(DOM.var1,"1")
-        typeData(DOM.var2,"2")
-        typeData(DOM.var3,"3")
-        typeData(DOM.var4,"4")
-        typeData(DOM.var5,"5")
-        typeData(DOM.var6,"6")
-        typeData(DOM.var7,"7")
-        typeData(DOM.var8,"8")
-        typeData(DOM.var9,"9")
-        typeData(DOM.var10,"10")
-        typeData(DOM.var11,"11")
-        typeData(DOM.var12,"12")
-        typeData(DOM.var13,"13")
-        typeData(DOM.var14,"14")
-        typeData(DOM.var15,"15")
-        typeData(DOM.var16,"16")
-        typeData(DOM.var17,"17")
-        typeData(DOM.var18,"18")
       }catch(error){
         console.error(error);
       } 
@@ -203,8 +162,80 @@ function card(btn, endpoint){
   })
 }
 
-card(DOMSelectors.form1, "type")
 card(DOMSelectors.form3, "region") 
+
+function types(){
+  DOMSelectors.form1.addEventListener("click", function(event){
+    event.preventDefault();
+    clear()
+    //clearButtons()
+    async function type(){
+      for(let i=1; i<=18; i++){
+        try{
+          const get = await fetch(`${URL}type/${i}`);
+          const ty = await get.json();
+          console.log(ty);
+          function typeCard(x){
+            DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+            `<div class="card">
+            <h2>${x.name.toUpperCase()}</h2>
+            <h3>${x.id}</h3>
+            <button type = "button" class = "var${i}">${x.name.toUpperCase()}</button>
+            </div>`
+            )
+          }
+          typeCard(ty)
+          const DOM = {
+            var1:document.querySelector(".var1"),
+            var2:document.querySelector(".var2"),
+            var3:document.querySelector(".var3"),
+            var4:document.querySelector(".var4"),
+            var5:document.querySelector(".var5"),
+            var6:document.querySelector(".var6"),
+            var7:document.querySelector(".var7"),
+            var8:document.querySelector(".var8"),
+            var9:document.querySelector(".var9"),
+            var10:document.querySelector(".var10"),
+            var11:document.querySelector(".var11"),
+            var12:document.querySelector(".var12"),
+            var13:document.querySelector(".var13"),
+            var14:document.querySelector(".var14"),
+            var15:document.querySelector(".var15"),
+            var16:document.querySelector(".var16"),
+            var17:document.querySelector(".var17"),
+            var18:document.querySelector(".var18"),
+            var19:document.querySelector(".var19"),
+            var20:document.querySelector(".var20"),
+          }
+          console.log(DOM)
+          typeData(DOM.var1,"1")
+          typeData(DOM.var2,"2")
+          typeData(DOM.var3,"3")
+          typeData(DOM.var4,"4")
+          typeData(DOM.var5,"5")
+          typeData(DOM.var6,"6")
+          typeData(DOM.var7,"7")
+          typeData(DOM.var8,"8")
+          typeData(DOM.var9,"9")
+          typeData(DOM.var10,"10")
+          typeData(DOM.var11,"11")
+          typeData(DOM.var12,"12")
+          typeData(DOM.var13,"13")
+          typeData(DOM.var14,"14")
+          typeData(DOM.var15,"15")
+          typeData(DOM.var16,"16")
+          typeData(DOM.var17,"17")
+          typeData(DOM.var18,"18")
+        }catch(error){
+          console.error(error);
+        }
+      }
+    }
+    type();
+  })
+}
+
+types();
 
 function typeData(btn,i){
   btn.addEventListener("click", function(event){
