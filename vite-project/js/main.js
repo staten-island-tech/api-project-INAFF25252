@@ -148,21 +148,90 @@ function card(btn, endpoint){
         poke.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
-            <h3>${item.name}</h3>
+            <button type = "button" class = "var${index+1}">${item.name.toUpperCase()}</button>
             <h3>${index + 1}</h2>
-            </div>
-      `   )
+            </div>`   
+          )
         })
+        const DOM = {
+          var1:document.querySelector(".var1"),
+          var2:document.querySelector(".var2"),
+          var3:document.querySelector(".var3"),
+          var4:document.querySelector(".var4"),
+          var5:document.querySelector(".var5"),
+          var6:document.querySelector(".var6"),
+          var7:document.querySelector(".var7"),
+          var8:document.querySelector(".var8"),
+          var9:document.querySelector(".var9"),
+          var10:document.querySelector(".var10"),
+          var11:document.querySelector(".var11"),
+          var12:document.querySelector(".var12"),
+          var13:document.querySelector(".var13"),
+          var14:document.querySelector(".var14"),
+          var15:document.querySelector(".var15"),
+          var16:document.querySelector(".var16"),
+          var17:document.querySelector(".var17"),
+          var18:document.querySelector(".var18"),
+          var19:document.querySelector(".var19"),
+          var20:document.querySelector(".var20"),
+        }
+        console.log(DOM)
+        typeData(DOM.var1,"1")
+        typeData(DOM.var2,"2")
+        typeData(DOM.var3,"3")
+        typeData(DOM.var4,"4")
+        typeData(DOM.var5,"5")
+        typeData(DOM.var6,"6")
+        typeData(DOM.var7,"7")
+        typeData(DOM.var8,"8")
+        typeData(DOM.var9,"9")
+        typeData(DOM.var10,"10")
+        typeData(DOM.var11,"11")
+        typeData(DOM.var12,"12")
+        typeData(DOM.var13,"13")
+        typeData(DOM.var14,"14")
+        typeData(DOM.var15,"15")
+        typeData(DOM.var16,"16")
+        typeData(DOM.var17,"17")
+        typeData(DOM.var18,"18")
       }catch(error){
         console.error(error);
       } 
     }
     otherButtons();
+    
   })
 }
 
 card(DOMSelectors.form1, "type")
 card(DOMSelectors.form3, "region") 
+
+function typeData(btn,i){
+  btn.addEventListener("click", function(event){
+    event.preventDefault();
+    clear();
+    async function typeFilter(URL){
+      try{
+        const response = await fetch(`${URL}type/${i}`)
+        const data = await response.json();
+        console.log(data);
+        data.pokemon.forEach((item)=>  {
+          console.log(item)
+          DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
+          <div class="card">
+          <h3>${item.pokemon.name}</h2>
+          </div>
+          `)
+        })
+      }catch(error){
+        console.log(error)    
+      }
+    }
+    typeFilter(URL)
+  })
+}
+
+
 
 function berries(){
   DOMSelectors.form2.addEventListener("click", function(event){
@@ -178,7 +247,7 @@ function berries(){
           function fruit(x){
             DOMSelectors.gallery.insertAdjacentHTML("beforeend",
             `<div class="card">
-            <h2>${x.name}</h2>
+            <h2>${x.name.toUpperCase()}</h2>
             <img src = "/${x.name}-berry.png" class = "card-img" alt = "error"></img>
             <h3>Id: ${x.id}</h3>
             <h3>Size: ${x.size}</h3>
@@ -279,7 +348,7 @@ function main(x){
 
   DOMSelectors.gallery.insertAdjacentHTML("beforeend",
     `<div class="card">
-    <h2>${x.name}</h2>
+    <h2>${x.name.toUpperCase()}</h2>
     <img src = "${x.sprites.front_default}" class = "card-img" alt = "error"></img>
     <h3>Id: ${x.id}</h3>
     <h3>Type 1: ${x.types[0].type.name}</h3>
