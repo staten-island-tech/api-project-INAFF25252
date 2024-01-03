@@ -83,13 +83,14 @@ form{
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 button{
   color: var(--text);
   text-align: center;
   margin:2%;
   display: inline-block;
   align-items: center;
-  border-radius: 8px;
+  border-radius: .2rem;
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
   font-size: var(--h5);
@@ -150,7 +151,7 @@ button{
 }
 
 button:hover {
-  border-color: black;
+  border-color: var(--text);
 }
 
 button:focus, button:focus-visible {
@@ -165,13 +166,24 @@ button:focus, button:focus-visible {
   padding: 2rem
 }
 
-.buttons, .Page{
+.buttons{
   display: flex;
   margin-bottom:2rem;
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
   text-align: center;
+}
+
+footer{
+  display: flex;
+  margin-bottom: 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+  background-color: var(--secondary);
+  color:var(--primary);
 }
 
 .Team{

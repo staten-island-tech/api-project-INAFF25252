@@ -8,7 +8,7 @@ const DOMSelectors = {
     form3: document.querySelector(".Region"),
     form: document.querySelector(".Main"),
     logo:document.querySelector(".logo"),
-    buttonFlip: document.querySelector(".Page"),
+    buttonFlip: document.querySelector("footer"),
     form4: document.querySelector(".next1"),
     form5: document.querySelector(".next2"),
     form6: document.querySelector(".next3"),
