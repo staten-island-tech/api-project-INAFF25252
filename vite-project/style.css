@@ -1,19 +1,20 @@
 :root {
-  --main: rgb(235, 144, 137);
-  --white:white;
+  --main: #a51e32;
+  --white:#ffffff;
+  --black:#000000;
   --light-yellow: #e0b401;
-  --yellow: #ab8402;
+  --dark-yellow: #23211c;
   --light-red: #f8baba;
-  --dark-red: #a66363;
+  --dark-red: #843131;
   --light-blue:#8badd8;
-  --blue:#5b5a9c;
+  --blue:#413f86;
   --gray: #252c30;
   --primary: var(--main);
   --secondary: var(--white);
   --primary: var(--light-red);
   --secondary: var(--dark-red);
   --primary: var(--light-yellow);
-  --secondary: var(--yellow);
+  --secondary: var(--dark-yellow);
   --primary: var(--light-blue);
   --secondary: var(--blue);
   /*Typography */
@@ -32,21 +33,28 @@ html {
 .maintheme{
   --primary: var(--main);
   --secondary: var(--white);
+  --text: var(--black);
+  --text2: var(--white);
 }
 
 .valor {
   --primary: var(--dark-red);
   --secondary: var(--light-red);
+  --text: var(--black);
+  --text2: var(--white);
 }
 .instinct {
-  --primary: var(--yellow);
-  --secondary: var(--light-yellow);
-  --white:var(--white);
+  --primary: var(--light-yellow);
+  --secondary: var(--dark-yellow);
+  --text: var(--white);
+  --text2: var(--black);
 }
 
 .mystic {
   --primary: var(--blue);
   --secondary: var(--light-blue);
+  --text: var(--black);
+  --text2: var(--white);
 }
 
 .main{
@@ -76,6 +84,7 @@ form{
   flex-wrap: wrap;
 }
 button{
+  color: var(--text);
   text-align: center;
   margin:2%;
   display: inline-block;
@@ -107,6 +116,7 @@ button{
   cursor: pointer;
   transition: border-color 0.25s;
   background-color: var(--primary);
+  color: var(--text2);
 }
 
 .error{
@@ -125,6 +135,7 @@ button{
 }
 
 #submit, .search{
+  color: var(--text);
   text-align: center;
   display: inline-block;
   align-items: center;
@@ -134,7 +145,6 @@ button{
   font-size: var(--h5);
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
   background-color: var(--secondary);
@@ -149,6 +159,7 @@ button:focus, button:focus-visible {
 }
 
 .flex-container{
+  color: var(--text);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -204,6 +215,7 @@ button:focus, button:focus-visible {
 
 
 h1{
+  color: var(--text);
   text-align:center;
   font-size:var(--h1);
   background-color:var(--secondary);;

@@ -2,39 +2,33 @@ import '/style.css'
 import { DOMSelectors } from './Dom';
 console.log(DOMSelectors);
 
-function theme(btn, x, y, z, m, i, name){
+function theme(btn, x, y, z, m, name){
   btn.addEventListener("click", function(event){
     event.preventDefault
     if (document.body.classList.contains(m)) {
         document.body.classList.add(x);
         document.body.classList.remove(m)
-        document.body.classList.add("main");
         let img = document.querySelector(".logo");
         img.setAttribute("src", name);
     } 
     if (document.body.classList.contains(z)) {
         document.body.classList.add(x);
-        document.body.classList.remove(z)
-        document.body.classList.add("main");
+        document.body.classList.remove(z) 
         let img = document.querySelector(".logo");
         img.setAttribute("src", name);
     } 
     if (document.body.classList.contains(y)) {
         document.body.classList.add(x);
         document.body.classList.remove(y)
-        document.body.classList.add("main");
         let img = document.querySelector(".logo");
         img.setAttribute("src", name);
-    }  
-    if (document.body.classList.contains(i)) {
-        DOMSelectors.title.add(".white");
-  }  
+    }    
   })
 }
 
-theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme","instinct",'/mystic.png');
-theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme","instinct",'/instinct.png');
-theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme","instinct",'/valor.png');
+theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme",'/mystic.png');
+theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme",'/instinct.png');
+theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme",'/valor.png');
 
 const URL = "https://pokeapi.co/api/v2/"
 const dog = "https://dog.ceo/api/breeds/image/random";
