@@ -14,7 +14,7 @@ const DOMSelectors = {
     form6: document.querySelector(".next3"),
     form7: document.querySelector(".next4"),
     search: document.querySelector("#form"),
-    input: document.querySelector(".pokemon"),
+    input: document.getElementById("#pokemon"),
     h1:document.querySelectorAll("h1"),
     h2: document.querySelectorAll(".name"),
     h3:document.querySelectorAll(".type"),
