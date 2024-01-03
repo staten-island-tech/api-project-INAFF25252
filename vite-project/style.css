@@ -30,27 +30,27 @@ html {
   padding: 0;
 }
 
-.maintheme{
+.Maintheme{
   --primary: var(--main);
   --secondary: var(--white);
   --text: var(--black);
   --text2: var(--white);
 }
 
-.valor {
+.Valor {
   --primary: var(--dark-red);
   --secondary: var(--light-red);
   --text: var(--black);
   --text2: var(--white);
 }
-.instinct {
+.Instinct {
   --primary: var(--light-yellow);
   --secondary: var(--dark-yellow);
   --text: var(--white);
   --text2: var(--black);
 }
 
-.mystic {
+.Mystic {
   --primary: var(--blue);
   --secondary: var(--light-blue);
   --text: var(--black);
