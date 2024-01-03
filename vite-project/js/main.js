@@ -26,9 +26,9 @@ function theme(btn, x, y, z, m, name){
   })
 }
 
-theme(DOMSelectors.theme,"Mystic","Instinct","Valor","Maintheme",'/mystic.png');
-theme(DOMSelectors.theme2,"Instinct","Mystic","Valor","Maintheme",'/instinct.png');
-theme(DOMSelectors.theme3,"Valor","Instinct", "Mystic", "Maintheme",'/valor.png');
+theme(DOMSelectors.theme,"mystic","instinct","valor","maintheme",'/mystic.png');
+theme(DOMSelectors.theme2,"instinct","mystic","valor","maintheme",'/instinct.png');
+theme(DOMSelectors.theme3,"valor","instinct", "mystic", "maintheme",'/valor.png');
 
 const URL = "https://pokeapi.co/api/v2/"
 const dog = "https://dog.ceo/api/breeds/image/random";
