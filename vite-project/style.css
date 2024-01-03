@@ -1,11 +1,11 @@
 :root {
-  --main: #a51e32;
+  --main: #c01a1a;
   --white:#ffffff;
   --black:#000000;
   --light-yellow: #e0b401;
   --dark-yellow: #23211c;
   --light-red: #f8baba;
-  --dark-red: #843131;
+  --dark-red: #9b1818;
   --light-blue:#8badd8;
   --blue:#413f86;
   --gray: #252c30;
@@ -189,8 +189,9 @@ button:focus, button:focus-visible {
   background-color: var(--secondary);
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   margin-left: 1rem;
   margin-right: 1rem;
   transition:.2s ease-in;

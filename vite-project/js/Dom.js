@@ -4,6 +4,7 @@ const DOMSelectors = {
     link: document.querySelectorAll(".link"),
     form1: document.querySelector(".Types"),
     form2: document.querySelector(".Berries"),
+    formball: document.querySelector(".Ball"),
     form3: document.querySelector(".Region"),
     form: document.querySelector(".Main"),
     logo:document.querySelector(".logo"),

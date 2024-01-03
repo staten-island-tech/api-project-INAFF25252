@@ -203,6 +203,55 @@ function berries(){
 }
 berries();
 
+function pokeballs(){
+  DOMSelectors.formball.addEventListener("click", function(event){
+    event.preventDefault();
+    clear()
+    //clearButtons()
+    async function pokeball(){
+        try{
+          const get = await fetch(`${URL}item?offset=0&limit=2110"/`);
+          const poke = await get.json();
+          poke.results.forEach((x)=>{
+            let balls = x.name.includes("-ball");
+            let id = x.name.includes("yarn")
+            let id2 = x.name.includes("smoke")
+            let id3 = x.name.includes("light")
+            let id4 = x.name.includes("iron")
+            let id5 = x.name.includes("air")      
+            if(balls === true && id === false && id2 === false && id3 === false && id4 === false&& id5 === false){
+              pokeball()
+              async function pokeball(){
+                try{
+                  const get = await fetch(`${URL}item/${x.name}`);
+                  const b = await get.json();    
+                  if(b.sprites.default !=null){      
+                    function ball(x){
+                      DOMSelectors.gallery.insertAdjacentHTML("beforeend",
+                      `<div class="card">
+                      <h2>${x.name.toUpperCase()}</h2>
+                      <img src = "${x.sprites.default}" class = "card-img" alt = "error"></img>
+                      <h3>Id: ${x.id}</h3>
+                      </div>`
+                      )
+                    }
+                    ball(b)
+                  }
+                }catch(error){
+                  console.log(error)
+                }
+              }
+            }
+          })
+        }catch(error){
+          console.error(error);
+        }
+    }
+    pokeball();
+  })
+}
+pokeballs();
+
 function id(btn, x, y){
   btn.addEventListener("click", function(event){
     event.preventDefault();
