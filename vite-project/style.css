@@ -134,7 +134,7 @@ button{
   background-color: var(--secondary);
 }
 
-#submit, .search, .search_pokemon{
+#submit, .search{
   height:5%;
   color: var(--text);
   text-align: center;
@@ -249,9 +249,19 @@ h3{
   margin-top:0;
 }
 
-.pokemon{
-  width: 70%;
+.pokemon, .search_pokemon{
+  width: 80%;
   height:2%;
+  margin:.4rem;
+  color: var(--secondary);
+  text-align: center;
+  display: inline-block;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  font-size: var(--h5);
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
