@@ -64,9 +64,9 @@ function card(btn, endpoint){
         poke.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
-            <h2>${item.name}</h2>
+            <h2>${item.name.toUpperCase()}</h2>
             <h3>${index + 1}</h2>
-            <button type = "button" class = "var${index + 1}">All Pokemon: ${item.name}</button>
+            <button type = "button" class = "var${index + 1}">All Pokemon: ${item.name.toUpperCase()}</button>
             </div>`   
           )
         })  
@@ -130,7 +130,7 @@ function regions(btn, endpoint){
         region.results.forEach((item, index)=>  {
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
             <div class="card">
-            <h2>${item.name}</h2>
+            <h2>${item.name.toUpperCase()}</h2>
             <h3>${index + 1}</h2>
             </div>`   
           )
@@ -157,7 +157,7 @@ function typeData(btn,i){
           console.log(item)
           DOMSelectors.gallery.insertAdjacentHTML("beforeend", `
           <div class="card">
-          <h3>${item.pokemon.name}</h2>
+          <h3>${item.pokemon.name.toUpperCase()}</h2>
           </div>
           `)
         })
