@@ -100,7 +100,6 @@ button{
   transition: border-color 0.25s;
   background-color: var(--secondary);
 }
-
 .var1,.var2,.var3,.var4,.var5,.var6,.var7,.var8,.var9,.var10,.var11,.var12,.var13,.var14,.var15,.var16,.var17,.var18{
   text-align: center;
   margin:2%;
@@ -134,13 +133,13 @@ button{
   background-color: var(--secondary);
 }
 
-#submit, .search{
+#submit, .search, .search_pokemon{
+  height:5%;
   color: var(--text);
   text-align: center;
   display: inline-block;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
   font-size: var(--h5);
   font-weight: 500;
@@ -240,6 +239,7 @@ h3{
 
 .pokemon{
   width: 70%;
+  height:2%;
 }
 
 @media screen and (max-width: 1200px) {
