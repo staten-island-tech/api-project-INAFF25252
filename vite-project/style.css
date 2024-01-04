@@ -87,7 +87,7 @@ form{
 button{
   color: var(--text);
   text-align: center;
-  margin:2%;
+  margin:1%;
   display: inline-block;
   align-items: center;
   border-radius: .2rem;
@@ -101,6 +101,12 @@ button{
   transition: border-color 0.25s;
   background-color: var(--secondary);
 }
+
+.Main, .Types, .Berries, .Ball, .Region{
+  background-color: transparent;
+  font-weight: bold;
+}
+
 .var1,.var2,.var3,.var4,.var5,.var6,.var7,.var8,.var9,.var10,.var11,.var12,.var13,.var14,.var15,.var16,.var17,.var18{
   text-align: center;
   margin:2%;
@@ -168,11 +174,11 @@ button:focus, button:focus-visible {
 
 .buttons{
   display: flex;
-  margin-bottom:2rem;
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
   text-align: center;
+  background-color: var(--secondary);
 }
 
 footer{
@@ -188,11 +194,11 @@ footer{
 
 .Team{
   display: flex;
-  margin-bottom:2rem;
   justify-content: space-around;
-  flex-wrap: wrap;
   position: relative;
   text-align: center;
+  margin-bottom:2rem;
+  padding: 1%;
   background-color: gray;
 }
 
