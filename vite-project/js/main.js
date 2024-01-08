@@ -252,6 +252,23 @@ function pokeballs(){
 }
 pokeballs();
 
+function pokemons(){
+  async function pokemonLoad(){
+    for(let i=1; i<=50; i++){
+      try{
+        const get = await fetch(`${URL}pokemon/${i}`);
+        const poke = await get.json();
+        console.log(poke);
+        main(poke)
+      }catch(error){
+        console.error(error);
+      }
+    }
+  }
+  pokemonLoad()
+}
+window.onload = pokemons();
+
 function id(btn, x, y){
   btn.addEventListener("click", function(event){
     event.preventDefault();
